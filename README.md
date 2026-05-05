@@ -1,6 +1,8 @@
 # S-Tier
 
-A small client-side tier-list maker built with HTML, CSS, and vanilla JavaScript modules.
+A single-page web app for creating and sharing tier-lists in the browser.
+
+Vibe-coded and built with HTML, CSS, and vanilla JavaScript modules.
 
 ## Run Locally
 
@@ -18,6 +20,6 @@ http://localhost:4173/
 
 ## Notes
 
-- The app stores tier-list state in the URL query string.
-- Copying the current URL is enough to share a list.
+- Tier list data is stored in the URL for easy sharing.
+- The current version does not support thumbnail images, for the sake of simplicity and sharability.
 - There is no backend, database, build step, or runtime dependency.

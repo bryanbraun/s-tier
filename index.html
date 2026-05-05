@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111318">
+    <title>S-Tier</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <main class="app-shell" id="app">
+      <header class="app-header">
+        <div class="title-area">
+          <label class="visually-hidden" for="tier-title">Tier list title</label>
+          <textarea
+            class="title-input"
+            id="tier-title"
+            name="tier-title"
+            autocomplete="off"
+            placeholder="Untitled tier list"
+            maxlength="120"
+            rows="1"
+          ></textarea>
+        </div>
+
+        <div class="toolbar" aria-label="Tier list controls">
+          <button class="button button-primary" id="add-item-button" type="button">+ Add item</button>
+          <button class="button" id="copy-link-button" type="button">Copy Link</button>
+          <button class="button button-danger" id="clear-list-button" type="button">Clear list</button>
+
+          <div class="settings">
+            <button
+              class="button"
+              id="settings-button"
+              type="button"
+              aria-expanded="false"
+              aria-controls="settings-panel"
+            >
+              Settings
+            </button>
+
+            <div class="settings-panel" id="settings-panel" hidden>
+              <label class="toggle-row" for="show-extra-tiers">
+                <input id="show-extra-tiers" type="checkbox">
+                <span>Show E/F tiers</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <form class="add-item-form" id="add-item-form" hidden>
+        <label class="visually-hidden" for="item-name">Item name</label>
+        <input
+          class="item-input"
+          id="item-name"
+          name="item-name"
+          type="text"
+          autocomplete="off"
+          placeholder="Item name"
+          maxlength="80"
+        >
+      </form>
+
+      <section class="unranked-section" aria-labelledby="unranked-heading">
+        <div class="section-head">
+          <h2 id="unranked-heading">Unranked</h2>
+        </div>
+        <div
+          class="item-zone drop-zone"
+          id="unranked-zone"
+          data-zone="unranked"
+          data-empty="No items"
+        ></div>
+      </section>
+
+      <section class="tier-board" id="tier-board" aria-label="Tier list"></section>
+
+      <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+    </main>
+
+    <noscript>
+      <p class="noscript-message">JavaScript is required to use this application.</p>
+    </noscript>
+  </body>
+</html>

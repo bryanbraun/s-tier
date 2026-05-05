@@ -12,6 +12,7 @@ const uiState = {
 
 renderState(state, elements, uiState);
 resizeTitleInput();
+setCopyrightYear();
 bindEvents();
 
 function bindEvents() {
@@ -33,15 +34,18 @@ function bindEvents() {
     elements.itemInput.focus();
   });
 
+  elements.collapseAddItemButton.addEventListener("click", () => {
+    collapseAddItemForm();
+  });
+
   elements.addItemForm.addEventListener("submit", (event) => {
     event.preventDefault();
     submitItem();
   });
 
   elements.itemInput.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !elements.itemInput.value.trim()) {
-      elements.addItemForm.hidden = true;
-      elements.addItemButton.focus();
+    if (event.key === "Escape") {
+      collapseAddItemForm();
     }
   });
 
@@ -54,8 +58,7 @@ function bindEvents() {
 
     state = createDefaultState();
     uiState.selectedItemId = null;
-    elements.addItemForm.hidden = true;
-    elements.itemInput.value = "";
+    collapseAddItemForm({ focusButton: false });
     renderAndSync();
     flashStatus("List cleared");
   });
@@ -106,6 +109,15 @@ function submitItem() {
   uiState.selectedItemId = item.id;
   renderAndSync();
   elements.itemInput.focus();
+}
+
+function collapseAddItemForm({ focusButton = true } = {}) {
+  elements.addItemForm.hidden = true;
+  elements.itemInput.value = "";
+
+  if (focusButton) {
+    elements.addItemButton.focus();
+  }
 }
 
 function handleAppClick(event) {
@@ -175,4 +187,8 @@ function resizeTitleInput() {
   elements.titleInput.classList.toggle("is-title-extra-long", titleLength > 48);
   elements.titleInput.style.height = "auto";
   elements.titleInput.style.height = `${elements.titleInput.scrollHeight}px`;
+}
+
+function setCopyrightYear() {
+  elements.copyrightYear.textContent = new Date().getFullYear();
 }

@@ -145,7 +145,8 @@ button {
 .item-input:focus-visible,
 .tier-item:focus-visible,
 .item-delete:focus-visible,
-.toggle-row input:focus-visible {
+.toggle-row input:focus-visible,
+.footer-link:focus-visible {
   outline: 3px solid rgba(125, 211, 252, 0.48);
   outline-offset: 2px;
 }
@@ -204,11 +205,15 @@ button {
 
 .add-item-form {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
   margin: 0 0 14px;
 }
 
 .item-input {
   width: min(420px, 100%);
+  min-height: 40px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--panel-soft);
@@ -414,6 +419,32 @@ button {
   margin: 0;
 }
 
+.app-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.footer-link {
+  border-radius: 4px;
+  color: rgba(244, 246, 251, 0.58);
+  text-decoration-color: rgba(244, 246, 251, 0.25);
+  text-underline-offset: 3px;
+  transition:
+    color 120ms ease,
+    text-decoration-color 120ms ease;
+}
+
+.footer-link:hover {
+  color: var(--text);
+  text-decoration-color: rgba(244, 246, 251, 0.65);
+}
+
 .noscript-message {
   margin: 16px;
   color: var(--text);
@@ -460,6 +491,14 @@ button {
   .button {
     min-height: 38px;
     padding: 0 11px;
+  }
+
+  .item-input {
+    flex: 1 1 100%;
+  }
+
+  .app-footer {
+    flex-direction: column;
   }
 
   .settings-panel {

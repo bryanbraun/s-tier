@@ -16,11 +16,12 @@ The application should feel like a standard tier-list maker: dark page backgroun
 - Optional tiers: `E` and `F`, controlled through settings.
 - Text-only items.
 - Add-item workflow:
-  - User clicks `Add item`.
+  - User clicks `New item`.
   - An input appears or receives focus.
   - User types an item name.
-  - User presses `Enter`.
+  - User presses `Enter` or clicks `Add`.
   - Item appears in an unranked item pool and can be dragged into a tier row.
+- The item-entry row can be collapsed with a `Done` button.
 - Drag and drop between:
   - Unranked item pool.
   - Tier rows.
@@ -31,6 +32,8 @@ The application should feel like a standard tier-list maker: dark page backgroun
 - Update URL in real time as the user edits the list.
 - `Copy Link` button that copies the current URL to the clipboard.
 - `Clear list` button in the toolbar with confirmation before resetting the list.
+- Small `What is a tier list?` link to the Wikipedia tier-list article.
+- Small footer copyright link with the current year and Bryan Braun's name.
 - GitHub Pages friendly static files.
 
 ### Out of Scope
@@ -136,10 +139,11 @@ If the URL has no tier-list data, the app starts as:
 
 ### Adding Items
 
-- `Add item` button reveals/focuses an input in the item pool area.
-- Pressing `Enter` creates the item.
+- `New item` button reveals/focuses an input in the item pool area.
+- Pressing `Enter` or clicking `Add` creates the item.
 - Empty or whitespace-only names are ignored.
 - After adding, the input clears and remains focused for fast entry.
+- Clicking `Done` collapses the item-entry row.
 
 ### Deleting Items
 

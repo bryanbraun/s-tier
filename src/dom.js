@@ -7,6 +7,7 @@ export function getElements() {
     addItemButton: document.querySelector("#add-item-button"),
     addItemForm: document.querySelector("#add-item-form"),
     itemInput: document.querySelector("#item-name"),
+    collapseAddItemButton: document.querySelector("#collapse-add-item-button"),
     copyLinkButton: document.querySelector("#copy-link-button"),
     clearListButton: document.querySelector("#clear-list-button"),
     settingsButton: document.querySelector("#settings-button"),
@@ -15,6 +16,7 @@ export function getElements() {
     unrankedZone: document.querySelector("#unranked-zone"),
     tierBoard: document.querySelector("#tier-board"),
     statusMessage: document.querySelector("#status-message"),
+    copyrightYear: document.querySelector("#copyright-year"),
   };
 }
 

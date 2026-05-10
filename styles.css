@@ -357,6 +357,7 @@ button {
   letter-spacing: 0;
   padding: 7px 7px 7px 12px;
   user-select: none;
+  cursor: grab;
 }
 
 .tier-item:hover,
@@ -369,6 +370,7 @@ button {
 
 .tier-item.is-dragging {
   opacity: 0.42;
+  cursor: grabbing;
 }
 
 .item-name {

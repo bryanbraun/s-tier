@@ -21,5 +21,5 @@ http://localhost:4173/
 ## Notes
 
 - Tier list data is stored in the URL for easy sharing.
-- The current version does not support thumbnail images, for the sake of simplicity and sharability.
+- The current version does not support thumbnail images, for the sake of simplicity and share-ability.
 - There is no backend, database, build step, or runtime dependency.
